@@ -1,0 +1,2 @@
+1.The @SpringBootApplication annotation is equivalent to using @Configuration, @EnableAutoConfiguration and @ComponentScan with their default attributes
+  -- @SpringBootApplication 等价于同时使用 @Configuration, @EnableAutoConfiguration, @ComponentScan
