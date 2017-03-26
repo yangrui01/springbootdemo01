@@ -1,2 +1,10 @@
 server:
-  port: 8082
+  port: 8080
+
+person:
+  name: "yangrui"
+  age: 12
+  desc: "name: ${person.name} age: ${person.age}"
+  favor:
+    book: "tom"
+    play: "tennis"

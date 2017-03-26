@@ -1,2 +1,12 @@
 1.The @SpringBootApplication annotation is equivalent to using @Configuration, @EnableAutoConfiguration and @ComponentScan with their default attributes
   -- @SpringBootApplication 等价于同时使用 @Configuration, @EnableAutoConfiguration, @ComponentScan
+2.*.yml文件里边<推荐优先使用yml文件而不是properties文件。>:
+     ①.“:”后边加一个空格再写值，比如：port: 8080（正确）port:8080（错误）。
+     ②.在配置文件中重用配置：
+         person:
+           name: "yangrui"
+           age: 12
+           desc: "name: ${person.name} age: ${person.age}"
+3.@Value:可以把配置文件中的属性值注入到类的某个属性中，比如：
+      @Value("${person.name}")
+      private String name;

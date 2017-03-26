@@ -1,5 +1,8 @@
 package com.reach.controller;
 
+import com.reach.entity.PersonProperties;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -9,8 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class UserController {
 
+    @Autowired
+    private PersonProperties personProperties;
+
     @RequestMapping("/")
-    public Integer showAge() {
-        return 1991;
+    public Object showAge() {
+        return personProperties.getFavor().getPlay();
     }
 }
