@@ -1,0 +1,10 @@
+server:
+  port: 8081
+
+person:
+  name: "yangrui"
+  age: 12
+  desc: "name: ${person.name} age: ${person.age}"
+  favor:
+    book: "tom"
+    play: "tennis"
