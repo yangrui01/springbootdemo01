@@ -9,4 +9,5 @@
            desc: "name: ${person.name} age: ${person.age}"
 3.@Value:可以把配置文件中的属性值注入到类的某个属性中，比如：
       @Value("${person.name}")
-      private String name;
+      private String name
+4.

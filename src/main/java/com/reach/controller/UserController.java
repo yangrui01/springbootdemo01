@@ -17,6 +17,6 @@ public class UserController {
 
     @RequestMapping("/")
     public Object showAge() {
-        return personProperties.getFavor().getPlay();
+        return personProperties.getFavor().getBook() + " "+ personProperties.getFavor().getPlay();
     }
 }

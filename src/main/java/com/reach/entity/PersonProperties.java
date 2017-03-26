@@ -60,7 +60,7 @@ public class PersonProperties {
         this.age = age;
     }
 
-    public static class Favor {
+    /*public static class Favor {
 
         private String book;
         private String play;
@@ -88,5 +88,5 @@ public class PersonProperties {
                     ", play='" + play + '\'' +
                     '}';
         }
-    }
+    }*/
 }
