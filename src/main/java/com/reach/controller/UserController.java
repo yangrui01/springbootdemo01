@@ -3,6 +3,7 @@ package com.reach.controller;
 import com.reach.entity.PersonProperties;
 import com.reach.entity.User;
 import com.reach.service.UserRepository;
+import com.reach.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,10 +22,12 @@ public class UserController {
     private PersonProperties personProperties;
     @Autowired
     private UserRepository repository;
+    @Autowired
+    private UserService userService;
 
     @RequestMapping("/")
     public Object showAge() {
-        return personProperties.getFavor().getBook() + " "+ personProperties.getFavor().getPlay();
+        return personProperties.getFavor().getBook() + " " + personProperties.getFavor().getPlay();
     }
 
     @RequestMapping("/list")
@@ -35,6 +38,11 @@ public class UserController {
     @RequestMapping("/get/{age}")
     public User getByAge(@PathVariable("age") Integer age) {
         return repository.getUserByAge(age);
+    }
+
+    @RequestMapping("/mybatisList")
+    public List<User> getAllList() {
+        return userService.query();
     }
 
 }

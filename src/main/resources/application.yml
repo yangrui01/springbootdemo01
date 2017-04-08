@@ -3,10 +3,16 @@ spring:
     active: prod
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/test
+    url: jdbc:mysql://127.0.0.1:3306/test?characterEncoding=utf8&useSSL=false
     username: root
-    password: root
+    password: 199192YangRui&
   jpa:
     show-sql: true
     hibernate:
       ddl-auto: update
+
+mybatis:
+  type-aliases-package: com.reach #类型基包
+  configuration:
+    map-underscore-to-camel-case: true #符合驼峰命名的表和实体之间映射
+  mapper-locations: mapper/*Mapper.xml

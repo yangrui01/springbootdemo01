@@ -1232,3 +1232,32 @@
    spring.test.database.replace=any # Type of existing DataSource to replace.
    spring.test.mockmvc.print=default # MVC Print option.
 
+7.集成mybatis： http://www.mybatis.org/spring-boot-starter/mybatis-spring-boot-autoconfigure
+   1.加入starter:
+      <dependency>
+          <groupId>org.mybatis.spring.boot</groupId>
+          <artifactId>mybatis-spring-boot-starter</artifactId>
+          <version>1.2.0</version>
+      </dependency>
+   2.配置yml文件：
+      mybatis:
+        type-aliases-package: com.reach #类型基包
+        configuration:
+          map-underscore-to-camel-case: true #符合驼峰命名的表和实体之间映射
+        mapper-locations: classpath*:/mapper/*Mapper.xml #映射*mapper.xml文件
+   3.mapper接口文件上加@Mapper
+
+   配置：
+     MyBatis uses the prefix mybatis for its properties
+     Available properties are:
+         config-location       	     MyBatis xml config file (optional)
+         check-config-location	     Indicates whether perform presence check of the MyBatis xml config file (optional)
+         mapper-locations            Mapper xml config files (optional)
+         type-aliases-package	     Package to search for type aliases (optional)
+         type-handlers-package	     Package to search for type aliases (optional)
+         executor-type	             Executor type: SIMPLE, REUSE, BATCH (optional)
+         configuration-properties 	 Externalized properties for MyBatis configuration (optional). Specified properties can be used as placeholder on MyBatis config file and Mapper file. For detail see the MyBatis reference page
+         configuration	             A MyBatis Configuration bean. About available properties see the MyBatis reference page. NOTE This property cannot be used at the same time with the config-location.
+
+8.使用druid数据源：
+
