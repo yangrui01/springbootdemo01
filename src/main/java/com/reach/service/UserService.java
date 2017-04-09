@@ -7,8 +7,9 @@ import com.reach.entity.User;
 import com.reach.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
+import com.reach.mapper.UserMapper;
 import javax.transaction.Transactional;
+import java.util.List;
 
 /**
  * @author yangrui
@@ -20,6 +21,8 @@ public class UserService {
 
     @Autowired
     private UserRepository repository;
+    @Autowired
+    private UserMapper mapper;
 
     public void insertUser() {
         User user = new User();
@@ -27,4 +30,9 @@ public class UserService {
         user.setName("yangrui");
         repository.save(user);
     }
+
+    public List<User> query() {
+        return mapper.query();
+    }
+
 }
