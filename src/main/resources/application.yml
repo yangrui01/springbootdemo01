@@ -19,4 +19,5 @@ mybatis:
   mapper-locations: mapper/*Mapper.xml
 #server:
 #  context-path: /spring_boot
+#测试git stash
 
