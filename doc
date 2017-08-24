@@ -1260,4 +1260,35 @@
          configuration	             A MyBatis Configuration bean. About available properties see the MyBatis reference page. NOTE This property cannot be used at the same time with the config-location.
 
 8.使用druid数据源：
+    1.引入依赖druid:
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.0.28</version>
+        </dependency>
+    2.修改yml文件：
+       spring.datasource.type= com.alibaba.druid.pool.DruidDataSource
+9.使用外部tomcat部署（三步）：
+    1.修改启动类,继承 SpringBootServletInitializer ,重写 configure 方法：
+       @SpringBootApplication
+       public class Springbootdemo01Application extends SpringBootServletInitializer{
 
+           @Override
+           protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+               return builder.sources(Springbootdemo01Application.class);
+           }
+
+           public static void main(String[] args) {
+               SpringApplication.run(Springbootdemo01Application.class, args);
+           }
+       }
+    2.修改打包方式：
+      <packaging>war</packaging>
+    3.加入依赖：
+      <dependency>
+              <groupId>org.springframework.boot</groupId>
+              <artifactId>spring-boot-starter-tomcat</artifactId>
+              <scope>provided</scope>  <!-- 部署时不会打进war包  -->
+      </dependency>
+    注：
+        可修改server配置项，比如：server.context-path=/spring_boot(有点小问题)
